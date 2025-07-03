@@ -1,0 +1,52 @@
+# Website-Grundeinstellungen
+title: "Mein Blog"
+description: "Ein persönlicher Blog über Technologie, Leben und alles dazwischen"
+author: "Ihr Name"
+email: "ihre.email@example.com"
+baseurl: "" # Unterverzeichnis, falls nötig (z.B. "/blog")
+url: "https://ihrname.github.io" # Ihre GitHub Pages URL
+
+# Build-Einstellungen für Jekyll
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Permalink-Struktur für Blog-Posts
+permalink: /:year/:month/:day/:title/
+
+# Paginierung (Anzahl Posts pro Seite)
+paginate: 5
+paginate_path: "/seite:num/"
+
+# Sammlung für Blog-Posts
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:year/:month/:day/:title/
+
+# Standard-Werte für neue Posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Ihr Name"
+
+# Social Media Links (optional)
+github_username: ihrname
+twitter_username: ihrname
+
+# Ausgeschlossene Dateien beim Build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+
+# Zeitzone
+timezone: Europe/Berlin
