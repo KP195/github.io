@@ -1,0 +1,272 @@
+---
+# Diese Front Matter Zeilen sind notwendig, damit Jekyll die SCSS-Datei verarbeitet
+---
+
+// Importiert die Standard-Styles des minima Themes
+@import "minima";
+
+// Custom Variables für Farben und Abstände
+$brand-color: #2a7ae4;
+$brand-color-light: lighten($brand-color, 40%);
+$brand-color-dark: darken($brand-color, 15%);
+
+$grey-color-light: lighten($grey-color, 40%);
+$code-background-color: #f8f8f8;
+
+// Verbesserungen für die Startseite
+.home-intro {
+  background: linear-gradient(135deg, $brand-color-light, $brand-color);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+  
+  p {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+// Verbesserte Post-Liste auf der Startseite
+.post-list {
+  margin-left: 0;
+  list-style: none;
+  
+  > li {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.post-link {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $brand-color;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  
+  &:hover {
+    color: $brand-color-dark;
+    text-decoration: underline;
+  }
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: $grey-color;
+  margin-bottom: 0.5rem;
+}
+
+.post-excerpt {
+  color: $text-color;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+// Verbesserungen für einzelne Blog-Posts
+.post-header {
+  margin-bottom: 2rem;
+  
+  .post-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: $brand-color-dark;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.post-content {
+  line-height: 1.7;
+  
+  // Verbesserte Überschriften
+  h1, h2, h3, h4, h5, h6 {
+    color: $brand-color-dark;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    border-bottom: 2px solid $brand-color-light;
+    padding-bottom: 0.3rem;
+  }
+  
+  // Verbesserte Code-Blöcke
+  pre, code {
+    background-color: $code-background-color;
+    border-radius: 4px;
+  }
+  
+  pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-left: 4px solid $brand-color;
+  }
+  
+  code {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.9rem;
+  }
+  
+  // Verbesserte Blockquotes
+  blockquote {
+    border-left: 4px solid $brand-color;
+    background-color: $brand-color-light;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+    
+    p {
+      margin-bottom: 0;
+    }
+  }
+  
+  // Verbesserte Listen
+  ul, ol {
+    padding-left: 2rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  // Verbesserte Links
+  a {
+    color: $brand-color;
+    
+    &:hover {
+      color: $brand-color-dark;
+    }
+  }
+  
+  // Verbesserte Tabellen
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    
+    th, td {
+      border: 1px solid $grey-color-light;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    
+    th {
+      background-color: $brand-color-light;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: lighten($brand-color-light, 20%);
+    }
+  }
+}
+
+// Responsive Design Verbesserungen
+@media screen and (max-width: 800px) {
+  .home-intro {
+    padding: 1.5rem;
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .post-list > li {
+    padding: 1rem;
+  }
+  
+  .post-header .post-title {
+    font-size: 2rem;
+  }
+  
+  .post-content {
+    pre {
+      padding: 0.75rem;
+    }
+  }
+}
+
+// Footer Verbesserungen
+.site-footer {
+  background-color: $brand-color-dark;
+  color: white;
+  
+  a {
+    color: $brand-color-light;
+    
+    &:hover {
+      color: white;
+    }
+  }
+  
+  .footer-heading {
+    color: white;
+  }
+}
+
+// Navigation Verbesserungen
+.site-header {
+  border-bottom: 2px solid $brand-color-light;
+  
+  .site-title {
+    color: $brand-color-dark;
+    font-weight: 600;
+    
+    &:hover {
+      text-decoration: none;
+      color: $brand-color;
+    }
+  }
+  
+  .page-link {
+    color: $text-color;
+    
+    &:hover {
+      color: $brand-color;
+    }
+  }
+}
+
+// Print Styles
+@media print {
+  .site-header,
+  .site-footer,
+  .page-navigation {
+    display: none;
+  }
+  
+  .post-content {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  .post-content a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .post-content a:after {
+    content: " (" attr(href) ")";
+  }
+}
